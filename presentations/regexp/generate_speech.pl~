@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $slide = 1;
+my $flag = 0;
+while(<>) {
+  if (/^%/../^[^%]/) {
+    if (s/^%\s*//) {
+      unless ($flag) {
+        print "========================================\n";
+        print "Слайд #$slide\n";
+        print "========================================\n\n";
+        $flag = 1;
+        $slide++;
+      }
+      print;
+    } 
+  } else {
+    $flag = 0;
+  } 
+}
+

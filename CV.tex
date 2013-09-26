@@ -1,0 +1,82 @@
+\documentclass[margin,15pt]{res} % default is 10 pt
+% margin option puts section titles to left of text
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks=false,
+    urlbordercolor=Blue,
+    pdfborderstyle={/S/U/W 1},
+}
+
+\newcommand{\gli}[2] {
+  {\color{Blue} \href{#1}{#2}}
+}
+
+\newcommand{\wsum}[3] {
+\begin{tabular}{ r l }
+\bf Project: & #1 \\
+\bf Role: & #2 \\
+\bf Duration: & #3  \\
+\end{tabular}
+}
+\begin{document}
+\name{Arkadii Galiash\\[12pt]} % the \\[12pt] adds a blank line after name
+
+\address{{\bf Contacts} \\  Saint Petersburg, Russia \\
+        \gli{mailto:arkady.galyash@gmail.com?subject=Zalando Job}{arkady.galyash@gmail.com} \\
+        +7(921) 553-9890 }
+\address{}
+\begin{resume}
+ 
+\section{SUMMARY}
+  \begin{itemize}
+    \item Sun Certified Java Programmer 
+    \item Over 5 years of Java GUI development of trading platforms using Swing
+    \item Strong in object-oriented design
+    \item Extensive experience in BDD (Behaviour-Driven Development) using Cucumber and JBehave
+    \item Good knowledge of JavaScript, Perl and UNIX shells
+  \end{itemize}
+\section{PROFESSIONAL SKILLS} 
+  \begin{itemize}
+     \item Programming languages: Java SE, shells, Perl, JavaScript
+%     \item Lexer/parser generators: JavaCC, bison(YACC), ANTLR, SableCC, lex
+     \item VCS: CVS, SVN, git
+     \item Tools: vim, IntelliJ IDEA (plugins development), Apache Ant, Maven, Atlassian JIRA, TeamCity
+     \item Testing tools: JUnit, JBehave, Cucumber
+     \item Other: Unix utilities, XML, HTML, XUL
+  \end{itemize}
+
+\section{WORK EXPERIENCE} 
+
+{\bf \gli{http://www.devexperts.com/en/index.html}{Devexperts}, St. Petersburg, Russia} \\
+\wsum{Tradable Chart Module}{Senior Java Developer}{Jun/12-present}
+
+Design and develop chart component for standalone Java trading platform, implement technical analysis indicators. \\
+Used technologies and tools: Java 7, IntelliJ IDEA, Maven, Spring, SVN, JUnit, \\ JBehave, Atlassian JIRA, TeamCity. \\ \\
+\wsum{ThinkOrSwim Chart Module}{Java Developer}{Sep/07-May/12}
+
+  Designed and developed specific scripting programming language (\gli{http://team.thinkorswim.com/manual/dark/thinkscript/index.html}{ThinkScript}) for stock market traders. Also developed GUI on Swing, wrote unit and integration tests, SVN hooks. \\ 
+Used technologies and tools: Java, JavaCC, ObjectWeb ASM, IntelliJ IDEA, Apache Ant, CVS, SVN, JUnit, Atlassian JIRA, TeamCity.
+
+{\bf \gli{http://niimm.spbu.ru/tambur_eng.htm}{Smirnov Scientific Research Institute in Mathematics and Mechanics}, \\ \gli{http://spbu.ru/}{St. Petersburg State University}} \\
+\wsum{Make2NetBeans}{Junior Java Developer}{Dec/06-Apr/07}
+
+Developed NetBeans plugin (\gli{http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=1495}{Make2NetBeans}) for conversion of GNU make-based projects to NetBeans projects. \\ 
+Used technologies and tools: Java, ANTLR.
+
+\section{EDUCATION}       2004-2009 \\ 
+                Master degree, Computer Science department  \\
+                \gli{http://www.math.spbu.ru/en/index.html}{The Faculty of Mathematics And Mechanics} \\
+		\gli{http://spbu.ru/}{St. Petersburg State University} \\
+ 
+ 
+\section{CERTIFICATES}
+2008 - Sun Certified Programmer for the Java Platform, SE 6 \\
+2007 - Sun Certified Programmer for the Java Platform, SE 5 \\
+
+\section{OPEN SOURCE} \gli{https://github.com/gark87}{github account} \\
+    \gli{http://sourceforge.net/users/gark87}{sourceforge account}
+\end{resume} 
+\end{document}
