@@ -1,4 +1,4 @@
 job-misc
 ========
 
-Rsume, presentations, etc.
+Resume, presentations, etc.
