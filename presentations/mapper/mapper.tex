@@ -1,6 +1,6 @@
 \documentclass[14pt]{beamer}
 \usetheme{Antibes}
-%\definecolor{myOrange}{RGB}{142,155,206}
+  %\definecolor{myOrange}{RGB}{142,155,206}
 \definecolor{myOrange}{RGB}{41,108,172}
 \setbeamercolor*{palette primary}{fg=myOrange}
 \setbeamercolor*{palette secondary}{fg=myOrange,bg=white}
@@ -57,6 +57,7 @@
     \end{textblock*}
 \end{frame}
 
+
 \frame
 {\frametitle{Disclaimer}
 \begin{itemize}
@@ -64,6 +65,7 @@
   \item<3-> Lets discuss today not implementations, but ideas staying behind them.
 \end{itemize}
 }
+
 
 \frame%
 {\frametitle{Agenda}
@@ -80,12 +82,14 @@
   \item XML oriented
 \end{itemize}
 }
+
 \frame
 {\frametitle{XRools}
 \begin{center}
   \large Talk is cheap. Show me the code.
 \end{center}
 }
+
 \subsection{XRools Pros}
 \frame
 {\frametitle{XRools Pros}
@@ -95,6 +99,7 @@
     \item<3-> Dashboard 
 \end{itemize}
 }
+
 \subsection{XRools Cons}
 \frame
 {\frametitle{XRools Cons}
@@ -104,9 +109,8 @@
     \item<3-> No compile-time checks
     \item<4-> Uses reflection
     \item<5-> No real IDE support
-    \item<6-> Not Turing-complete
-    \item<7-> Functions defined away from its only usage
-    \item<8-> Debugging?
+    \item<6-> Functions defined away from its only usage
+    \item<7-> Debugging?
 \end{itemize}
 }
 
@@ -118,7 +122,7 @@
   \end{center}
 }
 
-\section{JAXB plugin}
+\section{JAXB plugin} 
 \subsection{JAXB plugin}
 \frame{
 \frametitle{JAXB plugin}
@@ -129,6 +133,7 @@
   \item Have nothing to do with Scala
 \end{itemize}
 }
+
 \frame
 {\frametitle{JAXB plugin}
 \begin{center}
@@ -145,15 +150,15 @@
   \item<3-> Simplify some code
 \end{itemize}
 }
+
 \subsection{JAXB plugin Cons}
 \frame{
 \frametitle{JAXB plugin Cons}
 \begin{itemize}
-  \item<1-> Pure Java
-  \item<2-> Only for JAXB generated classes
-  \item<3-> Simplify only some code
-  \item<4-> Not declarative enough
-  \item<5-> Not mapper at all
+  \item<1-> Only for JAXB generated classes
+  \item<2-> Simplify only some code
+  \item<3-> Not declarative enough
+  \item<4-> Not mapper at all
 \end{itemize}
 }
 
@@ -164,6 +169,7 @@
     \includegraphics[width=0.5\textwidth]{jaxb.jpg} 
   \end{center}
 }
+
 \frame{
 \frametitle{Can we do better?}
   \begin{center} 
@@ -198,6 +204,7 @@
 \end{itemize}
 }
 
+
 \frame
 {\frametitle{Yajom}
 \begin{center}
@@ -212,11 +219,11 @@
   \item<1-> Scala
   \item<2-> Compile-time bulletproof
   \item<3-> IDE support
-  \item<4-> I cannot imagine more declarative tool
-  \item<5-> Works with any classes without any changes
-  \item<6-> No problem with debugging
+  \item<4-> Works with any classes without any changes
+  \item<5-> No problem with debugging
 \end{itemize}
 }
+
 \subsection{Yajom Cons}
 \frame{
 \frametitle{Yajom Cons}
@@ -224,7 +231,7 @@
   \item<1-> Scala
   \item<2-> Maybe not mature enough
   \only<3->{
-    \begin{textblock*}{35mm}(0.8\textwidth,5cm)%
+    \begin{textblock*}{35mm}(0.8\textwidth,45mm)%
       \includegraphics[width=35mm]{troll.png}
     \end{textblock*}
   }
