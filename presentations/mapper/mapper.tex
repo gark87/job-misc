@@ -24,6 +24,29 @@
 \usepackage{alltt}
 \usepackage[english]{babel}
 \usepackage{listings}
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+\definecolor{javalinenumbers}{RGB}{79,80,81} % linenumbers
+\lstset{language=Java,
+basicstyle=\ttfamily \small,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=left,
+numberstyle=\color{javalinenumbers}\scriptsize,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+showstringspaces=false,
+breaklines=true,
+emph={
+  val, var
+},
+emphstyle=\color{javapurple}\bfseries,
+}
 \usepackage{hyperref}
 \usepackage{multirow}
 \usepackage[absolute,overlay]{textpos}
@@ -204,6 +227,61 @@
 \end{itemize}
 }
 
+\subsection{Code organisation}
+\frame
+{\frametitle{Philosoraptor}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{phil.png}
+  \end{center}
+}
+
+\begin{frame}[fragile]
+\frametitle{Java with JAXB plugin}
+\begin{lstlisting}
+A a = from.getA();
+if (verySpecial(from)) {
+  B b = defaultB;
+  if (a != null) {
+    B realB = a.getB();
+    if (realB != null)
+      b = realB; 
+  } 
+  to.c().d().e().setB(b)
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Option-based yajom}
+\begin{lstlisting}
+yajomOption(to.getC.getD.getE.setB) {
+  val a = from.getA
+  if (verySpecial(from)) {
+    var b = defaultB
+    if (a != null) {
+      val realB = a.getB
+      if (realB != null)
+        b = realB
+    }
+    Some(b)
+  } else
+    None
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Option-based yajom with maybe}
+\begin{lstlisting}
+yajomOption(to.getC.getD.getE.setB) {
+  if (verySpecial(from)) {
+    val b = maybe(from.getA.getB)
+    Some(b.getOrElse(defaultB))
+  } else
+    None
+}
+\end{lstlisting}
+\end{frame}
 
 \frame
 {\frametitle{Yajom}
