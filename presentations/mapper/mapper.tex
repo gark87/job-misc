@@ -248,7 +248,7 @@ if (from.isVerySpecial()) {
     if (realB != null)
       b = realB; 
   } 
-  to.c().d().e().setB(b);
+  to.c().setB(b);
 }
 \end{lstlisting}
 \end{frame}
@@ -256,7 +256,27 @@ if (from.isVerySpecial()) {
 \begin{frame}[fragile]
 \frametitle{Option-based yajom}
 \begin{lstlisting}
-yajomOption(to.getC.getD.getE.setB) {
+val option = {
+  val a = from.getA
+  if (from.isVerySpecial) {
+    var b = defaultB
+    if (a != null) {
+      val realB = a.getB
+      if (realB != null)
+        b = realB
+    }
+    Some(b)
+  } else None
+}
+yajomOption(to.getC.setB)(option)
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Option-based yajom}
+\begin{lstlisting}
+yajomOption(to.getC.setB) {
   val a = from.getA
   if (from.isVerySpecial) {
     var b = defaultB
@@ -275,7 +295,7 @@ yajomOption(to.getC.getD.getE.setB) {
 \begin{frame}[fragile]
 \frametitle{Option-based yajom with maybe}
 \begin{lstlisting}
-yajomOption(to.getC.getD.getE.setB) {
+yajomOption(to.getC.setB) {
   if (from.isVerySpecial) {
     val b = maybe(from.getA.getB)
     Some(b.getOrElse(defaultB))
