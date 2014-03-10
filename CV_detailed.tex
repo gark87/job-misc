@@ -21,11 +21,18 @@
 \bf Duration: & #3  \\
 \end{tabular}
 }
+\newcommand{\gh}[3] {
+\begin{tabular}{ r l }
+\bf Project: & \gli{https://github.com/gark87/#1}{#2} \\
+\bf Technology: & #3 \\
+\end{tabular} \\
+}
+
 \begin{document}
 \name{Arkadii Galiash\\[12pt]} % the \\[12pt] adds a blank line after name
 
 \address{{\bf Contacts} \\  Saint Petersburg, Russia \\
-        \gli{mailto:arkady.galyash@gmail.com?subject=Zalando Job}{arkady.galyash@gmail.com} \\
+        \gli{mailto:arkady.galyash@gmail.com?subject=Job}{arkady.galyash@gmail.com} \\
         +7(921) 553-9890 }
 \address{}
 \begin{resume}
@@ -33,7 +40,7 @@
 \section{SUMMARY}
   \begin{itemize}
     \item Sun Certified Java Programmer 
-    \item Over 5 years of Java GUI development of trading platforms using Swing
+    \item Over 6 years of Java GUI development of trading platforms using Swing
     \item Strong in object-oriented design
     \item Extensive experience in BDD (Behaviour-Driven Development) using Cucumber and JBehave
     \item Good knowledge of JavaScript, Perl and UNIX tools
@@ -54,11 +61,36 @@
 {\bf \gli{http://www.devexperts.com/en/index.html}{Devexperts}, St. Petersburg, Russia} \\
 \wsum{Tradable Chart Module}{Senior Java Developer}{Jun/12-present}
 
-Design and develop chart component (both client and server side) for standalone Java trading platform, implement technical analysis indicators. \\
+Design and develop chart component (both client and server side) for standalone Java trading platform, implement technical analysis indicators. 
+
+{\bf Responsibilities:} 
+\begin{itemize}
+  \item New features development
+  \item Design and planning of the code architecture
+  \item Development times estimation
+  \item Continious Integration support
+  \item Code review
+  \item Mentoring
+\end{itemize}
+
+{\bf Key achivements: }
+\begin{itemize}
+  \item To improve quality and reduce costs I implemented integration tests using JBehave. Now when QA finds a bug they just describe S2R as user story and it can be used as test.
+  \item Because we needed chart module in our Android application too, I've added additional painting layer to separate model, controller and even view from Swing framework.
+\end{itemize}
 Used technologies and tools: Java 7, IntelliJ IDEA, Maven, Spring, SVN, JUnit, \\ JBehave, Atlassian JIRA, TeamCity. \\ \\
 \wsum{ThinkOrSwim Chart Module}{Java Developer}{Sep/07-May/12}
 
-  Designed and developed DSL (\gli{http://team.thinkorswim.com/manual/dark/thinkscript/index.html}{ThinkScript}) for stock market traders. Also developed GUI on Swing, wrote unit and integration tests, SVN hooks. \\ 
+  I've designed and developed Domain-Specific Language (\gli{http://team.thinkorswim.com/manual/dark/thinkscript/index.html}{ThinkScript}) for traders to calculate custom technical analysis strategies. \\
+I wrote:
+\begin{itemize} 
+\item frontend (parser, internal representation)
+\item backend (JVM bytecode generation)
+\item runtime (user strategies can be run both on client and server sides)
+\item small IDE for this custom language (editor, syntax highlighting, visual editor).
+\end{itemize}
+ Most interesting was visual editor (Condition Wizard) which allows user to form script by combining of some predefined scripts, options and inputs.
+ Also developed GUI on Swing, wrote unit and integration tests, SVN hooks. \\ 
 Used technologies and tools: Java, JavaCC, ObjectWeb ASM, IntelliJ IDEA, Apache Ant, CVS, SVN, JUnit, Atlassian JIRA, TeamCity.
 
 {\bf \gli{http://niimm.spbu.ru/tambur_eng.htm}{Smirnov Scientific Research Institute in Mathematics and Mechanics}, \\ \gli{http://spbu.ru/}{St. Petersburg State University}} \\
@@ -66,6 +98,22 @@ Used technologies and tools: Java, JavaCC, ObjectWeb ASM, IntelliJ IDEA, Apache 
 
 Developed NetBeans plugin (\gli{http://plugins.netbeans.org/PluginPortal/faces/PluginDetailPage.jsp?pluginid=1495}{Make2NetBeans}) for conversion of GNU make-based projects to NetBeans projects. \\ 
 Used technologies and tools: Java, ANTLR.
+
+\section{OPEN SOURCE} 
+  \gh{ideaCC}{ideaCC}{Java, JavaCC, IntelliJ platform} 
+JavaCC (LL(k) parser generator) support (syntax, highlighting, navigation, etc.). 
+
+  \gh{SmartFilters}{SmartFilters}{Javascript, XUL, SQLite} 
+I receive enormous amount of e-mail every day and I would like to have automatic filtering system based on several criteria analysis (e.g. theme, address, mailing user agent). \\
+I've developed this Thunderbird plugin using JavaScript and XUL. Also I've used unsupervised Machine Learning (k-means clustering) algorithm to find out regularities in emails subjects. 
+
+  \gh{yajom}{yajom}{Scala} 
+We needed to transform one JAXB objects to another, we used \gli{http://nomin.sourceforge.net/}{nomin} (Groovy framework with DSL to describe such transformations).\\
+Nomin has the following problems: no compile-time checks, weak IDE support, no static typing, weak performance, poor debug support.
+I've developed Scala analogue using Scala macroses and implicits without these weaknesses.
+
+  \gh{gark87-GM-scripts}{Greasemonkey scripts}{Javascript, JIRA, Polarion} 
+Various scripts to improve everyday working process with JIRA and Polarion.
 
 \section{EDUCATION}       2004-2009 \\ 
                 Master degree, Computer Science department  \\
@@ -77,8 +125,5 @@ Used technologies and tools: Java, ANTLR.
 2008 - Sun Certified Programmer for the Java Platform, SE 6 \\
 2007 - Sun Certified Programmer for the Java Platform, SE 5 \\
 \gli{https://www.coursera.org/user/i/abfc0ac6e61ca09d51d659e3b46a0899}{coursera account}
-
-\section{OPEN SOURCE} \gli{https://github.com/gark87}{github account} \\
-    \gli{http://sourceforge.net/users/gark87}{sourceforge account}
 \end{resume} 
 \end{document}
