@@ -102,123 +102,62 @@ morecomment=[s][\color{blue}]{@}{\ }
 \frame{\frametitle{May 2001}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{2001.png} \\
-    User reports a bug, JUnit discovered
+    JUnit discovered
   \end{center}
 }
-
-
-\begin{frame}[fragile]
-\frametitle{May 2001}
-\begin{center}
-\begin{lstlisting}[frame=single]
-public void testSimpleAdd() {
-    Money m12 = new Money(12, "USD");
-    Money m14 = new Money(14, "USD");
-    Money expected = new Money(26, "USD");
-    Money result = m12.add(m14);
-    assert (expected.equals(result));
-}
-\end{lstlisting} 
-\end{center}
-\end{frame}
 
 \subsection{July 2006}
 \frame{\frametitle{July 2006}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{2006.png} \\
-    User reports another bug, migrate to JUnit 4
+    User tries to search non-existant element
   \end{center}
 }
-
-
-\begin{frame}[fragile]
-\frametitle{July 2006}
-\begin{center}
-\begin{lstlisting}[frame=single]
-@Test public void simpleAdd() {
-  ...
-}
-@Test public void addNull() {
-    Money m12 = new Money(12, "USD");
-    Money result = m12.add(null);
-    assertTrue(m12.equals(result));
-}
-\end{lstlisting} 
-\end{center}
-\end{frame}
 
 \subsection{December 2007}
 \frame{\frametitle{December 2007}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{2007.png} \\
-    User reports one more bug
+    User tries to search in array with duplicates
   \end{center}
 }
-
-
-\begin{frame}[fragile]
-\frametitle{December 2007}
-\begin{center}
-\begin{lstlisting}[frame=single]
-@Test public void simpleAdd() {
-  ...
-}
-@Test public void addNull() {
-  ...
-}
-@Test public void addBillions() {
-    Money max = new Money(MAX_VALUE, "USD");
-    Money one = new Money(1, "USD");
-    Money result = max.add(one);
-    assertTrue(result.getAmount() > 0);
-}
-\end{lstlisting} 
-\end{center}
-\end{frame}
 
 \subsection{October 2009}
 \frame{\frametitle{October 2009}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{2009.png} \\
-    Time to refactoring
+    Integer overflow
   \end{center}
 }
 
-
-\begin{frame}[fragile]
-\frametitle{October 2009}
-\begin{center}
-\begin{lstlisting}[frame=single]
-@Test public void simpleAdd(); 
-@Test public void addNull();
-@Test public void addBillions();
-
-private void testAdd(Money _1, Money _2) {
-  Money result = _1.add(_2);
-  assertEquals(result.getAmount(), 
-         _1.getAmount() + _2.getAmount());
-}
-\end{lstlisting} 
-\end{center}
+\subsection{Summary}
+\begin{frame}[t]
+  \frametitle{Long way}
+  \begin{center}
+  \begin{tabular}{c @{} c @{} c @{} c @{} c}
+    \includegraphics[width=0.2\textwidth]{2000.png} &
+    \includegraphics[width=0.2\textwidth]{2001.png} &
+    \includegraphics[width=0.2\textwidth]{2006.png} &
+    \includegraphics[width=0.2\textwidth]{2007.png} &
+    \includegraphics[width=0.2\textwidth]{2009.png} \\
+    2000 & 2001 & 2006 & 2007 & 2009
+  \end{tabular}
+  \end{center}
 \end{frame}
 
-\subsection{Long way}
-\frame{\frametitle{Long way}
-  \begin{center}
-    \includegraphics[width=0.27\textwidth]{2000.png} 
-    \includegraphics[width=0.27\textwidth]{2001.png} \\
-    \includegraphics[width=0.27\textwidth]{2006.png} 
-    \includegraphics[width=0.27\textwidth]{2007.png} 
-    \includegraphics[width=0.27\textwidth]{2009.png} \\
-  \end{center}
+\frame{\frametitle{xUnit}
+  \begin{itemize}
+    \item We need to think about test cases
+    \item Until we've discover one, we cannot find a bug
+    \item If we discover test case, this test is useless right now, it may be useful only in future
+  \end{itemize}
 }
 
-\frame{\frametitle{Long way}
+\frame{\frametitle{QuickCheck}
   \begin{itemize}
-    \item Figure out some test inputs
-    \item Code duplication
-    \item Understand post- and pre-conditions
-    \item Separate creating test inputs from assertions 
+    \item Another approach
+    \item 
+    \item If we discover test case, this test is useless right now, it may be useful only in future
   \end{itemize}
 }
 
