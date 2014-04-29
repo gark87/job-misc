@@ -87,6 +87,7 @@ morecomment=[s][\color{blue}]{@}{\ }
     \item John Doe The Programmer
     \item Java developer @ Moon Ms
     \item Since 2000
+    \item Binary search algorithm
   \end{itemize}
 }
 
@@ -149,16 +150,48 @@ morecomment=[s][\color{blue}]{@}{\ }
   \begin{itemize}
     \item We need to think about test cases
     \item Until we've discover one, we cannot find a bug
-    \item If we discover test case, this test is useless right now, it may be useful only in future
+    \item If we discover a test case, this test is useless right now, it may be useful only in future
   \end{itemize}
 }
 
+\subsection{QuickCheck}
 \frame{\frametitle{QuickCheck}
   \begin{itemize}
     \item Another approach
-    \item 
-    \item If we discover test case, this test is useless right now, it may be useful only in future
+    \item You specify pre- and post-conditions 
+    \item Let computer generate input data
   \end{itemize}
+}
+
+\frame{\frametitle{QuickCheck History}
+  \begin{itemize}
+    \item Initially written for Haskell in 1999
+    \item Re-implementations of QuickCheck exist for Java, Scala, Clojure, Groovy, ...
+  \end{itemize}
+}
+
+\frame{\frametitle{QuickCheck implementations}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{all_checks.png}
+  \end{center}
+}
+
+\frame{\frametitle{QuickCheck implementations}
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{jvm_checks.png}
+  \end{center}
+}
+
+\frame{
+  \begin{center}
+    \includegraphics[height=0.9\textheight]{we_can.png} 
+  \end{center}
+}
+
+\frame{\frametitle{Demo}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{cooking.jpg}
+  \end{center}
 }
 
 % Ссылки 
