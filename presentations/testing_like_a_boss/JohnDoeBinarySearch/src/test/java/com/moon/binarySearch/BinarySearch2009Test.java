@@ -13,7 +13,7 @@ public class BinarySearch2009Test {
     private final BinarySearch binarySearch = new BinarySearch2007();
 
     @Test
-    public void sameHuge() {
+    public void hugeArrayTest() {
         int actual = binarySearch.execute(new byte[1100000000], (byte) 1);
         Assert.assertEquals(-1, actual);
     }

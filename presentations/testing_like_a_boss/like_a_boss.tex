@@ -19,6 +19,10 @@
 }
 \setbeamertemplate{itemize item}{\textbullet}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows, positioning}
+\tikzset{node distance=0cm, auto}
+
 \usepackage{amsmath}
 \usepackage{ulem}
 \usepackage{alltt}
@@ -135,22 +139,54 @@ morecomment=[s][\color{blue}]{@}{\ }
 \begin{frame}[t]
   \frametitle{Long way}
   \begin{center}
-  \begin{tabular}{c @{} c @{} c @{} c @{} c}
-    \includegraphics[width=0.2\textwidth]{2000.png} &
-    \includegraphics[width=0.2\textwidth]{2001.png} &
-    \includegraphics[width=0.2\textwidth]{2006.png} &
-    \includegraphics[width=0.2\textwidth]{2007.png} &
-    \includegraphics[width=0.2\textwidth]{2009.png} \\
-    2000 & 2001 & 2006 & 2007 & 2009
-  \end{tabular}
+    \begin{tikzpicture}
+      \node[inner sep=0pt] at (0,4.25)
+        {\includegraphics[width=2cm]{2000.png}};
+      \node[inner sep=0pt] at (2,4.25)
+        {\includegraphics[width=2cm]{2001.png}};
+      \node[inner sep=0pt] at (4,4.25)
+        {\includegraphics[width=2cm]{2006.png}};
+      \node[inner sep=0pt] at (6,4.25)
+        {\includegraphics[width=2cm]{2007.png}};
+      \node[inner sep=0pt] at (8,4.25)
+        {\includegraphics[width=2cm]{2009.png}};
+      \node (s1) at (8, 0) {};
+      \node (s2) at (6, 0.5) {};
+      \node (s3) at (4, 1) {};
+      \node (s4) at (2, 1.5) {};
+      \node[draw=none] at (0,2.5) {2000};
+      \node[draw=none] at (2,2.5) {2001};
+      \node[draw=none] at (4,2.5) {2006};
+      \node[draw=none] at (6,2.5) {2007};
+      \node[draw=none] at (8,2.5) {2009};
+      \draw[thick,->] (s1) -- (9,0); 
+      \draw[thick,->] (s2) -- (9,0.5);
+      \draw[thick,->] (s3) -- (9,1);
+      \draw[thick,->] (s4) -- (9,1.5);
+      \node[left=0.1cm of s1] {\footnotesize hugeArrayTest};
+      \node[left=0.1cm of s2] {\footnotesize sameTest};
+      \node[left=0.1cm of s3] {\footnotesize missingTest};
+      \node[left=0.1cm of s4] {\footnotesize simpleTest};
+      \fill(2,1.5) circle (2pt);
+      \draw (4,1.5cm+2pt) -- (4,1.5cm-2pt);
+      \draw (6,1.5cm+2pt) -- (6,1.5cm-2pt);
+      \draw (8,1.5cm+2pt) -- (8,1.5cm-2pt);
+      \fill(4,1) circle (2pt);
+      \draw (6,1cm+2pt) -- (6,1cm-2pt);
+      \draw (8,1cm+2pt) -- (8,1cm-2pt);
+      \fill(6,0.5) circle (2pt);
+      \draw (8,0.5cm+2pt) -- (8,0.5cm-2pt);
+      \fill(8, 0) circle (2pt);
+    \end{tikzpicture}
   \end{center}
 \end{frame}
 
 \frame{\frametitle{xUnit}
   \begin{itemize}
-    \item We need to think about test cases
-    \item Until we've discover one, we cannot find a bug
+    \item Design tests example by example
+    \item Test suites give us confidence that code works for the examples we thought of
     \item If we discover a test case, this test is useless right now, it may be useful only in future
+    \item "Don't ask, don't tell"
   \end{itemize}
 }
 
@@ -158,15 +194,16 @@ morecomment=[s][\color{blue}]{@}{\ }
 \frame{\frametitle{QuickCheck}
   \begin{itemize}
     \item Another approach
-    \item You specify pre- and post-conditions 
-    \item Let computer generate input data
+    \item You specify actions and post-conditions 
+    \item Let computer generate input data \\ (he will not forget about corner cases)
   \end{itemize}
 }
 
 \frame{\frametitle{QuickCheck History}
   \begin{itemize}
     \item Initially written for Haskell in 1999
-    \item Re-implementations of QuickCheck exist for Java, Scala, Clojure, Groovy, ...
+    \item By Koen Claessen and John Hughes
+    \item BSD-style License
   \end{itemize}
 }
 

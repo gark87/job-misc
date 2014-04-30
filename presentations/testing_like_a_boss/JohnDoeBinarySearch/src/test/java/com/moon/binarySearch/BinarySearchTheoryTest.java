@@ -10,6 +10,7 @@ import java.util.*;
 import static org.junit.Assert.assertEquals;
 
 /**
+ * QuickCheck-style test.
  *
  * @author John Doe
  * @version 2.0
@@ -17,15 +18,19 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(Theories.class)
 public class BinarySearchTheoryTest {
-    private final BinarySearch binarySearch = new BinarySearch2007();
+    private final BinarySearch binarySearch = new BinarySearch2006();
 
     @Theory
     public void binarySearch(@ForAll byte[] haystack, @ForAll byte needle) {
         Arrays.sort(haystack);
         String msg = Arrays.toString(haystack) + " with " + needle;
 
-        System.out.println(msg);
-        int actual = binarySearch.execute(haystack, needle);
+        int actual;
+        try {
+            actual = binarySearch.execute(haystack, needle);
+        } catch (Throwable t) {
+            throw new IllegalStateException(msg, t);
+        }
 
         // check binary search with linear search
         int expected = -1;
