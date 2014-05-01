@@ -1,12 +1,12 @@
 package com.moon.binarySearch;
 
 /**
- * Binary search.
+ * To find element in array.
  *
  * @author John Doe
  * @version 1.0
  * @since June 2000
  */
-public interface BinarySearch {
+public interface Search {
     int execute(byte[] haystack, byte needle);
 }

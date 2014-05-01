@@ -18,7 +18,8 @@ import static org.junit.Assert.assertEquals;
 public class BinarySearchTheoryTest {
     private static final byte[][] HAYSTACKS = {{1, 1, 1, 1}, {1, 2, 3, 4}};
     private static final byte[] NEEDLES = {0, 1, 4, 5};
-    private final BinarySearch binarySearch = new BinarySearch2006();
+    private final Search binarySearch = new BinarySearch2007();
+    private final Search linearSearch = new LinearSearch();
 
     @DataPoints
     public static TestData[] haystackData() {
@@ -43,13 +44,7 @@ public class BinarySearchTheoryTest {
         }
 
         // check binary search with linear search
-        int expected = -1;
-        for (int i = 0; i < haystack.length; i++) {
-            if (haystack[i] == needle) {
-                expected = i;
-                break;
-            }
-        }
+        int expected = linearSearch.execute(haystack, needle);
         assertEquals(data.toString(), expected, actual);
     }
 

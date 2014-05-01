@@ -16,7 +16,8 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(Theories.class)
 public class BinarySearchQuickcheckTest {
-    private final BinarySearch binarySearch = new BinarySearch2006();
+    private final Search binarySearch = new BinarySearch2007();
+    private final Search linearSearch = new LinearSearch();
 
     @Theory
     public void binarySearch(@ForAll byte[] haystack, @ForAll(sampleSize=10) byte needle) {
@@ -31,13 +32,7 @@ public class BinarySearchQuickcheckTest {
         }
 
         // check binary search with linear search
-        int expected = -1;
-        for (int i = 0; i < haystack.length; i++) {
-            if (haystack[i] == needle) {
-                expected = i;
-                break;
-            }
-        }
+        int expected = linearSearch.execute(haystack, needle);
         assertEquals(msg, expected, actual);
     }
 }

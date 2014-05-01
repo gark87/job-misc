@@ -16,7 +16,7 @@ import java.util.Collection;
  */
 @RunWith(Parameterized.class)
 public class BinarySearchParameterizedTest {
-    private final BinarySearch binarySearch = new BinarySearch2007();
+    private final Search binarySearch = new BinarySearch2007();
     private final byte[] haystack;
     private final byte needle;
     private final int expected;

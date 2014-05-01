@@ -7,7 +7,7 @@ package com.moon.binarySearch;
  * @version 3.0
  * @since July 2006
  */
-public class BinarySearch2006 implements BinarySearch {
+public class BinarySearch2006 implements Search {
     @Override
     public int execute(byte[] haystack, byte needle) {
         int left = 0;

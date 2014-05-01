@@ -1,6 +1,7 @@
 package com.moon.binarySearch;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -10,9 +11,10 @@ import org.junit.Test;
  * @since December 2009
  */
 public class BinarySearch2009Test {
-    private final BinarySearch binarySearch = new BinarySearch2007();
+    private final Search binarySearch = new BinarySearch2007();
 
     @Test
+    @Ignore
     public void hugeArrayTest() {
         int actual = binarySearch.execute(new byte[1100000000], (byte) 1);
         Assert.assertEquals(-1, actual);

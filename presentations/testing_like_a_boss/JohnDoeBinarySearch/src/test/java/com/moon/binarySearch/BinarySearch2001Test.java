@@ -11,7 +11,7 @@ import org.junit.Test;
  * @since May 2001
  */
 public class BinarySearch2001Test {
-    private final BinarySearch binarySearch = new BinarySearch2001();
+    private final Search binarySearch = new BinarySearch2001();
 
     @Test
     public void simpleTest() {
