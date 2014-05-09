@@ -20,6 +20,18 @@
     <orderEntry type="library" name="Maven: ognl:ognl:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: javassist:javassist:3.11.0.GA" level="project" />
     <orderEntry type="library" name="Maven: com.pholser:junit-quickcheck-generators:0.3" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/jcheck-0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/lib/jcheck-0.1-src.zip!/src" />
+          <root url="jar://$MODULE_DIR$/lib/jcheck-0.1-src.zip!/test" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 

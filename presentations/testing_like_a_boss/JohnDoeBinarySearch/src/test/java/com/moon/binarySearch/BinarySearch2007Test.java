@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Like {@link BinarySearch2006Test}, but with "same items" test.
  *
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 4.0
  * @since December 2007
  */

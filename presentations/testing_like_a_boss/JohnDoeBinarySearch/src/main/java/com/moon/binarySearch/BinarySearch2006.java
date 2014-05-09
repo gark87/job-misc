@@ -3,7 +3,7 @@ package com.moon.binarySearch;
 /**
  * Like {@link BinarySearch2001}, but with "missing item" fix.
  *
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 3.0
  * @since July 2006
  */

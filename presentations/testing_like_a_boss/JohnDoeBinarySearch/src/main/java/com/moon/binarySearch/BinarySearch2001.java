@@ -3,7 +3,7 @@ package com.moon.binarySearch;
 /**
  * Exactly like {@link BinarySearch2000}.
  *
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 2.0
  * @since May 2001
  */

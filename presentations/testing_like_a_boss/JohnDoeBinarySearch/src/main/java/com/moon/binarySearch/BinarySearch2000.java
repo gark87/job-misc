@@ -1,7 +1,7 @@
 package com.moon.binarySearch;
 
 /**
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 1.0
  * @since June 2000
  */

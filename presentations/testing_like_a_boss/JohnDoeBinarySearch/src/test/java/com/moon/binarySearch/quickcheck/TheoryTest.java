@@ -1,5 +1,8 @@
-package com.moon.binarySearch;
+package com.moon.binarySearch.quickcheck;
 
+import com.moon.binarySearch.BinarySearch2007;
+import com.moon.binarySearch.LinearSearch;
+import com.moon.binarySearch.Search;
 import org.junit.contrib.theories.DataPoints;
 import org.junit.contrib.theories.Theories;
 import org.junit.contrib.theories.Theory;
@@ -10,12 +13,12 @@ import java.util.*;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Like {@link BinarySearchParameterizedTest}, but using {@link Theories}.
+ * Like {@link ParameterizedTest}, but using {@link Theories}.
  *
- * @author John Doe
+ * @author John Doe The Programmer
  */
 @RunWith(Theories.class)
-public class BinarySearchTheoryTest {
+public class TheoryTest {
     private static final byte[][] HAYSTACKS = {{1, 1, 1, 1}, {1, 2, 3, 4}};
     private static final byte[] NEEDLES = {0, 1, 4, 5};
     private final Search binarySearch = new BinarySearch2007();

@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * First unit test, check simple case.
  *
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 2.0
  * @since May 2001
  */

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * Like {@link BinarySearch2007Test}, but with "integer overflow" test.
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 5.0
  * @since December 2009
  */

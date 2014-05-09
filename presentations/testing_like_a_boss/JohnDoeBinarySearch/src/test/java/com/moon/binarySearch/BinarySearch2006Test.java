@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Like {@link BinarySearch2001Test}, but with "missing item" test.
  *
- * @author John Doe
+ * @author John Doe The Programmer
  * @version 3.0
  * @since July 2006
  */

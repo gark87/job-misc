@@ -1,5 +1,7 @@
-package com.moon.binarySearch;
+package com.moon.binarySearch.quickcheck;
 
+import com.moon.binarySearch.BinarySearch2007;
+import com.moon.binarySearch.Search;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,18 +12,18 @@ import java.util.Collection;
 
 
 /**
- * Like {@link BinarySearch2009Test}, but using {@link org.junit.runners.Parameterized}
+ * Like {@link com.moon.binarySearch.BinarySearch2009Test}, but using {@link org.junit.runners.Parameterized}
  *
- * @author John Doe
+ * @author John Doe The Programmer
  */
 @RunWith(Parameterized.class)
-public class BinarySearchParameterizedTest {
+public class ParameterizedTest {
     private final Search binarySearch = new BinarySearch2007();
     private final byte[] haystack;
     private final byte needle;
     private final int expected;
 
-    public BinarySearchParameterizedTest(byte[] haystack, byte needle, int expected) {
+    public ParameterizedTest(byte[] haystack, byte needle, int expected) {
         this.haystack = haystack;
         this.needle = needle;
         this.expected = expected;
