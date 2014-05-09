@@ -56,6 +56,8 @@ emphstyle=\color{myOrange}\bfseries,
 morecomment=[s][\color{blue}]{@}{\ }
 }
 
+\definecolor{links}{HTML}{0000FF}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
 \usepackage{hyperref}
 \logo{\includegraphics[width=1cm]{logo.png}}
@@ -219,15 +221,26 @@ morecomment=[s][\color{blue}]{@}{\ }
   \end{center}
 }
 
-\subsection{junit-quickcheck}
+\subsection{Java Quickchecks}
 \frame{\frametitle{junit-quickcheck}
   \begin{itemize}
     \item Based on \texttt{org.junit.experimental.theories.*}
     \item Annotation-based
-    \item MIT License
+    \item On github of Paul Holser (\href{https://github.com/pholser/junit-quickcheck}{@pholser})
+    \item 0.3 version in maven repository
+    \item Found \href{https://github.com/pholser/junit-quickcheck/issues/35}{bug with generics} during making presentation
   \end{itemize}
 }
 
+\frame{\frametitle{JCheck}
+  \begin{itemize}
+    \item Based on \texttt{org.junit.experimental.theories.*}
+    \item Annotation-based
+    \item On github of Paul Holser (\href{https://github.com/pholser/junit-quickcheck}{@pholser})
+    \item 0.3 version
+    \item Found \href{https://github.com/pholser/junit-quickcheck/issues/35}{bug with generics} during making presentation
+    \end{itemize}
+}
 \frame{\frametitle{JUnit \texttt{Theory}}
   \begin{itemize}
     \item Experimental JUnit feature
