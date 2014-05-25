@@ -15,7 +15,7 @@ import java.util.*;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by gark87 on 5/3/14.
+ * @author John Doe The Programmer
  */
 @RunWith(org.jcheck.runners.JCheckRunner.class)
 public class JCheckTest {

@@ -4,6 +4,8 @@ import com.moon.binarySearch.BinarySearch2006;
 import com.moon.binarySearch.LinearSearch;
 import com.moon.binarySearch.Search;
 import com.pholser.junit.quickcheck.ForAll;
+import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.contrib.theories.Theories;
 import org.junit.contrib.theories.Theory;
 import org.junit.runner.RunWith;
