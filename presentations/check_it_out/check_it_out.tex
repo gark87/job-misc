@@ -19,7 +19,7 @@
 }
 \setbeamertemplate{itemize item}{\textbullet}
 
-\usepackage{tikz}
+\usepackage{tikz, tikz-qtree}
 \usetikzlibrary{arrows, positioning}
 \tikzset{node distance=0cm, auto}
 
@@ -192,15 +192,16 @@ morecomment=[s][\color{blue}]{@}{\ }
   \end{itemize}
 }
 
-\subsection{QuickCheck}
-\frame{\frametitle{QuickCheck}
+\section{Property based testing}
+\frame{\frametitle{Property based testing}
   \begin{itemize}
     \item Another approach
     \item You specify actions and post-conditions 
-    \item Let computer generate input data \\ (he will not forget about corner cases)
+    \item Let computer generate input data \\ (it will not forget about corner cases)
   \end{itemize}
 }
 
+\subsection{QuickCheck}
 \frame{\frametitle{QuickCheck History}
   \begin{itemize}
     \item Initially written for Haskell in 1999
@@ -215,57 +216,121 @@ morecomment=[s][\color{blue}]{@}{\ }
   \end{center}
 }
 
+\section{Java Quickchecks}
 \frame{\frametitle{QuickCheck implementations}
   \begin{center}
     \includegraphics[width=0.9\textwidth]{jvm_checks.png}
   \end{center}
 }
 
-\subsection{Java Quickchecks}
+
+\frame{\frametitle{Scala? Clojure?}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{no_thanks.jpeg}
+  \end{center}
+}
+
+\frame{\frametitle{Implementations criteria}
+  \begin{itemize}
+    \item Generators of custom types
+    \item Generators with restrictions
+    \item Search-space customization
+  \end{itemize}
+}
+
+\frame{\frametitle{Trie}
+  \begin{center}
+  \begin{tikzpicture}
+    \tikzset{level distance=3.5em, sibling distance=1.5em, edge from parent/.append style={thick} }
+    \Tree [.* [.c [.a b r t ] ] [.p [.a n ] [.e n t ] [.o t ] ] ]
+  \end{tikzpicture}
+  \end{center}
+}
+
+\subsection{junit-quickcheck}
 \frame{\frametitle{junit-quickcheck}
   \begin{itemize}
     \item Based on \texttt{org.junit.experimental.theories.*}
     \item Annotation-based
-    \item On github of Paul Holser (\href{https://github.com/pholser/junit-quickcheck}{@pholser})
+    \item On \href{https://github.com/pholser/junit-quickcheck}{github.com} by @pholser
     \item 0.3 version in maven repository
     \item Found \href{https://github.com/pholser/junit-quickcheck/issues/35}{bug with generics} during making presentation
   \end{itemize}
 }
 
+\frame{\frametitle{Demo}
+  \begin{center}
+    \includegraphics[height=0.8\textheight]{not_ready.jpg}
+  \end{center}
+}
+
+\subsection{JCheck}
 \frame{\frametitle{JCheck}
   \begin{itemize}
-    \item Based on \texttt{org.junit.experimental.theories.*}
+    \item Has its own JUnit Runner
     \item Annotation-based
-    \item On github of Paul Holser (\href{https://github.com/pholser/junit-quickcheck}{@pholser})
-    \item 0.3 version
-    \item Found \href{https://github.com/pholser/junit-quickcheck/issues/35}{bug with generics} during making presentation
-    \end{itemize}
-}
-\frame{\frametitle{JUnit \texttt{Theory}}
-  \begin{itemize}
-    \item Experimental JUnit feature
-    \item \texttt{@RunWith(Theories.class)}
-    \item \texttt{@Theory}, \texttt{@DataPoint}, \texttt{@DataPoints} 
+    \item On \href{http://sourceforge.net/projects/jcheck/}{sf.net} by @hampusr
+    \item 0.1 version jar from 2008
   \end{itemize}
 }
 
 \frame{\frametitle{Demo}
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{cooking.jpg}
+    \includegraphics[height=0.8\textheight]{show_code.jpg}
   \end{center}
 }
 
-\frame{
+\subsection{quickcheck}
+\frame{\frametitle{quickcheck}
+  \begin{itemize}
+    \item Do not have Runner at all
+    \item Handle only data generation
+    \item On \href{https://bitbucket.org/blob79/quickcheck}{bitbucket.org} by @blob79
+    \item 0.6 version in maven repository
+  \end{itemize}
+}
+
+\frame{\frametitle{Demo}
   \begin{center}
-    \includegraphics[height=0.9\textheight]{we_can.png} 
+    \includegraphics[height=0.8\textheight]{finally.jpeg} 
   \end{center}
 }
 
+\section{Where can we use it?}
+\frame{\frametitle{ThinkScript}
+  \begin{itemize}
+    \item Programming language for traders
+    \item Technical analisys
+    \item Has a lot of built-in functions (SMA, EMA, WMA, ...)
+  \end{itemize}
+}
+
+\frame{\frametitle{Standard deviation}
+  \begin{center}
+    \Large{$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2}$, \\
+    $\mu = \frac{1}{N} \sum_{i=1}^N x_i$}
+  \end{center}
+}
+
+\frame{\frametitle{Demo}
+  \begin{center}
+    \includegraphics[height=0.8\textheight]{we_can.png} 
+  \end{center}
+}
+
+\frame{\frametitle{Donald Knuth is shocked by stdev}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{knuth.jpg} 
+  \end{center}
+}
 % Ссылки 
 \section{Links}
 \frame{\frametitle{Links}
   \begin{itemize}
+    \item \href{https://github.com/gark87/job-misc/tree/master/presentations/check_it_out/JohnDoeProject}{JohnDoeProject with examples}
     \item \href{http://www.haskell.org/haskellwiki/Introduction_to_QuickCheck2}{Introduction to QuickCheck2}
+    \item \href{http://theyougen.blogspot.ru/search/label/quickcheck}{Blog dedicated to Java Quickcheck}
+    \item \href{http://thinkrelevance.com/blog/2013/11/26/better-than-unit-tests}{Better Than Unit Tests}
   \end{itemize}
 }
 \frame{\frametitle{Thank you!}
