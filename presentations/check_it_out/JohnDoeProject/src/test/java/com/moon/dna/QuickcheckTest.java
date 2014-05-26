@@ -2,12 +2,13 @@ package com.moon.dna;
 
 import net.java.quickcheck.Generator;
 import net.java.quickcheck.generator.distribution.Distribution;
+import net.java.quickcheck.generator.support.FixedValuesGenerator;
 import net.java.quickcheck.generator.support.IntegerGenerator;
 import net.java.quickcheck.generator.support.StringGenerator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Set;
 
 /**
@@ -17,7 +18,7 @@ public class QuickcheckTest {
     @Test
     public void testTrie() {
         Generator<String> dnaGen = new StringGenerator(new IntegerGenerator(1, 100, Distribution.POSITIV_NORMAL),
-                new DNAGenerator());
+                new FixedValuesGenerator<>(Arrays.asList('A', 'T', 'C', 'G')));
         Generator<Trie> trieGen = new TrieGenerator(dnaGen);
         for (int i = 0; i < 10000; i++) {
             Trie trie = trieGen.next();
@@ -46,16 +47,6 @@ public class QuickcheckTest {
             for (int i = 0; i < lengthGen.next(); i++)
                 result.add(dnaGen.next());
             return result;
-        }
-    }
-
-    private static class DNAGenerator implements Generator<Character> {
-        private static final char[] CHARS = {'A', 'T', 'G', 'C'};
-        private final IntegerGenerator generator = new IntegerGenerator(0, CHARS.length - 1);
-
-        @Override
-        public Character next() {
-            return CHARS[generator.nextInt()];
         }
     }
 }

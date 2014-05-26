@@ -4,7 +4,6 @@ import com.pholser.junit.quickcheck.ForAll;
 import com.pholser.junit.quickcheck.From;
 import com.pholser.junit.quickcheck.generator.GenerationStatus;
 import com.pholser.junit.quickcheck.generator.Generator;
-import com.pholser.junit.quickcheck.generator.java.lang.StringGenerator;
 import com.pholser.junit.quickcheck.random.SourceOfRandomness;
 import org.junit.Assert;
 import org.junit.contrib.theories.Theories;
