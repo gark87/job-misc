@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="JohnDoeBinarySearch" />
+        <module name="JohnDoeProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="JohnDoeBinarySearch" target="1.7" />
+      <module name="JohnDoeProject" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

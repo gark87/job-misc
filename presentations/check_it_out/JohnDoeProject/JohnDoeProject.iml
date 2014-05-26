@@ -23,6 +23,20 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/devexperts/toschart.test.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/devexperts/thinkscript.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/devexperts/toscommon.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/lib/devexperts/toschart.test.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/devexperts/toschart-src.zip!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: com.pholser:junit-quickcheck-core:0.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.11" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
